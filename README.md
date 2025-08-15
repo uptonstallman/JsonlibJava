@@ -18,14 +18,14 @@ Add the library to your project by including the JAR or using Maven/Gradle:
 
 ```xml
 <dependency>
-    <groupId>com.uptonstallman</groupId>
+    <groupId>io.github.uptonstallman</groupId>
     <artifactId>jsonlibjava</artifactId>
     <version>2.5.3</version>
 </dependency>
 ```
 ### Gradle
 
-implementation 'com.uptonstallman:jsonlibjava:2.5.3'
+implementation 'io.uptonstallman:jsonlibjava:2.5.3'
 
 ### Usage
 
