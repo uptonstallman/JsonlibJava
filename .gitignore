@@ -1,0 +1,16 @@
+target/
+build/
+dist/
+.idea/
+*.iml
+*.jar
+*.zip
+*.xcf
+*.svg
+*.png
+*.jpg
+*.psd
+*.JPG
+o.js
+TODO
+

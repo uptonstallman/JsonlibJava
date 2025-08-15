@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Aranel",
+    "level": 42,
+    "stats": {
+      "health": 980,
+      "mana": 300,
+      "strength": 75,
+      "agility": 60
+    },
+    "inventory": [
+      {
+        "itemId": 101,
+        "name": "Sword of Dawn",
+        "type": "Weapon",
+        "attributes": {
+          "damage": 120,
+          "durability": 85,
+          "enchantments": [
+            { "name": "Flame", "level": 2 },
+            { "name": "Sharpness", "level": 3 }
+          ]
+        }
+      },
+      {
+        "itemId": 202,
+        "name": "Healing Potion",
+        "type": "Consumable",
+        "effect": { "heal": 150 }
+      }
+    ],
+    "quests": [
+      {
+        "questId": 501,
+        "title": "Defend the Northern Wall",
+        "status": "In Progress",
+        "objectives": [
+          { "description": "Defeat 10 goblins", "completed": true },
+          { "description": "Defeat 3 orcs", "completed": false }
+        ]
+      },
+      {
+        "questId": 502,
+        "title": "Find the Lost Relic",
+        "status": "Not Started",
+        "objectives": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Kael",
+    "level": 35,
+    "stats": {
+      "health": 800,
+      "mana": 500,
+      "strength": 60,
+      "agility": 80
+    },
+    "inventory": [],
+    "quests": []
+  },
+  {
+    "id": 3,
+    "name": "Lyra",
+    "level": 27,
+    "stats": {
+      "health": 620,
+      "mana": 700,
+      "strength": 40,
+      "agility": 95
+    },
+    "inventory": [
+      {
+        "itemId": 303,
+        "name": "Crystal Staff",
+        "type": "Weapon",
+        "attributes": {
+          "damage": 90,
+          "durability": 70,
+          "enchantments": [
+            { "name": "Ice", "level": 1 },
+            { "name": "Mana Regen", "level": 2 }
+          ]
+        }
+      }
+    ],
+    "quests": [
+      {
+        "questId": 601,
+        "title": "Rescue the Merchant",
+        "status": "Completed",
+        "objectives": [
+          { "description": "Locate merchant", "completed": true },
+          { "description": "Escort to safety", "completed": true }
+        ]
+      }
+    ]
+  }
+]

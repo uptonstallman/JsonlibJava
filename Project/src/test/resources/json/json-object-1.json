@@ -1,0 +1,34 @@
+
+	{
+		"g{{{\"r{[[,eat" : [{}, {}], 
+		"otro c{a,:mpo" : "su v,a}]]::[lor", 
+        "num]}}erito": 456,
+
+		"prueba" : true,		
+
+		"e{ste": {
+					"hola" : "prueba 123", 
+
+					"otra" : "", 
+
+					"nombre" : "esto es \"una prueba", 
+
+					"abc" : {
+								"letras" : "fweifono wf oweifweiojf", 
+								"dificil" : [
+									{"mas" : "cosas", "numeros" : 123}
+								]			
+							}
+					, 
+					"funciona" : "????"
+					
+				}, 
+
+		"xxxx" :
+        "yyyyyyy",
+        "zzzz" : null,
+		"test":    		1.5, 
+		"asdasd" : true
+	}	
+
+
