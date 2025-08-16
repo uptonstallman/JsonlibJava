@@ -27,7 +27,7 @@ Add the library to your project by including the JAR or using Maven/Gradle:
 
 implementation 'io.uptonstallman:jsonlibjava:2.5.3'
 
-### Usage
+## Usage
 
 ### API Reference
 
@@ -55,13 +55,16 @@ implementation 'io.uptonstallman:jsonlibjava:2.5.3'
 - **Returns:**  
   `JsonArrayTextOutput` – JSON string.
 
-### Json specification
-[RFC8259](https://datatracker.ietf.org/doc/html/rfc8259)
+### Javadoc
+[https://uptonstallman.github.io/JsonlibJava/javadoc/2.5.3/](https://uptonstallman.github.io/JsonlibJava/javadoc/2.5.3/)
 
 ### Debug
 System property: -DjsonlibLogLevel=DEBUG
 
-### License
+## Json specification
+[RFC8259](https://datatracker.ietf.org/doc/html/rfc8259)
+
+## License
 
     Copyright (C) 2025  Upton Stallman
 
