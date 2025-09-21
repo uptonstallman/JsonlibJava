@@ -1,0 +1,9 @@
+io.github.uptonstallman.jsonlibjava.input.parser
+io.github.uptonstallman.jsonlibjava.input.serializer
+io.github.uptonstallman.jsonlibjava.output.parser
+io.github.uptonstallman.jsonlibjava.output.serializer
+io.github.uptonstallman.jsonlibjava.process
+io.github.uptonstallman.jsonlibjava.process.log
+io.github.uptonstallman.jsonlibjava.process.parser
+io.github.uptonstallman.jsonlibjava.process.serializer
+io.github.uptonstallman.jsonlibjava.process.util
