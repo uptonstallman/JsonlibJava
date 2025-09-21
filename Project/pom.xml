@@ -5,7 +5,7 @@
 
 	<groupId>io.github.uptonstallman</groupId>
 	<artifactId>jsonlibjava</artifactId>
-	<version>2.5.3</version>
+	<version>3.0.0</version>
 
     <name>JSON Parser &amp; Serializer (Java)</name>
     <description>

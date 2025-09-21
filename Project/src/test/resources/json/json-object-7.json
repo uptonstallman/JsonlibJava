@@ -1,5 +1,4 @@
 {
-  "game": {
     "title": "Legends of Eldoria",
     "version": "1.0.5",
     "developer": {
@@ -99,5 +98,4 @@
         "weather": "Clear"
       }
     }
-  }
 }

@@ -5,9 +5,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.uptonstallman.jsonlibjava.TestConfig;
-import io.github.uptonstallman.jsonlibjava.input.JsonArrayListInput;
-import io.github.uptonstallman.jsonlibjava.input.JsonArrayTextInput;
-import io.github.uptonstallman.jsonlibjava.output.JsonArrayListOutput;
+import io.github.uptonstallman.jsonlibjava.input.parser.JsonArrayTextInput;
+import io.github.uptonstallman.jsonlibjava.input.serializer.JsonArrayListInput;
+import io.github.uptonstallman.jsonlibjava.output.parser.JsonArrayListOutput;
 import io.github.uptonstallman.jsonlibjava.process.log.ConsoleLog;
 import io.github.uptonstallman.jsonlibjava.process.serializer.JsonArraySerializer;
 import org.junit.jupiter.api.Assertions;
@@ -22,57 +22,57 @@ import java.util.Objects;
 
 public class JsonArrayParserTest extends TestConfig {
 
-    ConsoleLog log = new ConsoleLog();
+  ConsoleLog log = new ConsoleLog();
 
-    // Parser to test
-    JsonArrayParser jsonArrayParser;
+  // Parser to test
+  JsonArrayParser jsonArrayParser;
 
-    // Jackson to compare results
-    JsonFactory jsonFactory = new JsonFactory();
-    ObjectMapper jsonMapper = new ObjectMapper(jsonFactory);
+  // Jackson to compare results
+  JsonFactory jsonFactory = new JsonFactory();
+  ObjectMapper jsonMapper = new ObjectMapper(jsonFactory);
 
-    @Test
-    public void givenValidJsonWhenParseThenReturnParseResult() throws Exception {
+  @Test
+  public void givenValidJsonWhenParseThenReturnParseResult() throws Exception {
 
-        for (final String fichero : jsonArrayTestFiles) {
-            URL resource = getClass().getClassLoader().getResource(fichero);
-            String j = new String(Files
-                    .readAllBytes(Paths.get(Objects.requireNonNull(resource).toURI())));
+    for (final String fichero : jsonArrayTestFiles) {
+      URL resource = getClass().getClassLoader().getResource(fichero);
+      String j = new String(Files
+        .readAllBytes(Paths.get(Objects.requireNonNull(resource).toURI())));
 
-            jsonArrayParser = new JsonArrayParser(new JsonArrayTextInput(j));
+      jsonArrayParser = new JsonArrayParser(new JsonArrayTextInput(j));
 
-            // execute parser
-            JsonArrayListOutput jsonArrayListOutput = jsonArrayParser.parse();
+      // execute parser
+      JsonArrayListOutput jsonArrayListOutput = jsonArrayParser.parse();
 
-            //compare
-            List<String> jacksonArrayItemsFromTestFile = getJacksonArrayItems(j);
+      //compare
+      List<String> jacksonArrayItemsFromTestFile = getJacksonArrayItems(j);
 
-            List<String> jacksonArrayItemsFromParseResult = getJacksonArrayItems(JsonArraySerializer
-                    .serialize(
-                            new JsonArrayListInput(jsonArrayListOutput.getJsonItems())
-                    ).getJsonText()
-            );
+      List<String> jacksonArrayItemsFromParseResult = getJacksonArrayItems(JsonArraySerializer
+        .serialize(
+          new JsonArrayListInput(jsonArrayListOutput.getJsonItems())
+        ).getJsonText()
+      );
 
-            int i = 0;
-            for (final String s : jacksonArrayItemsFromTestFile) {
-                Assertions.assertEquals(jacksonArrayItemsFromParseResult.get(i), s);
-                i++;
-            }
-
-        }
+      int i = 0;
+      for (final String s : jacksonArrayItemsFromTestFile) {
+        Assertions.assertEquals(jacksonArrayItemsFromParseResult.get(i), s);
+        i++;
+      }
 
     }
 
-    private List<String> getJacksonArrayItems(String j) throws JsonProcessingException {
+  }
 
-        JsonNode jsonRootNode = jsonMapper.readTree(j);
-        List<String> items = new ArrayList<>();
-        for (JsonNode element : jsonRootNode) {
-            items.add(element.toString());
-        }
+  private List<String> getJacksonArrayItems(String j) throws JsonProcessingException {
 
-        return items;
-
+    JsonNode jsonRootNode = jsonMapper.readTree(j);
+    List<String> items = new ArrayList<>();
+    for (JsonNode element : jsonRootNode) {
+      items.add(element.toString());
     }
+
+    return items;
+
+  }
 
 }
