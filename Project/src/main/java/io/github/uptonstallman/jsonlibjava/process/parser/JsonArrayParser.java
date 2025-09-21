@@ -34,11 +34,23 @@ public class JsonArrayParser extends Constants {
   private int[] pointsPositions;
 
   /**
+   * Parse json array literal.
+   *
+   * @param jsonArrayTextInput the json array text input
+   * @return the json array list output
+   * @throws JsonParseException the json parse exception
+   */
+  public static JsonArrayListOutput parse(JsonArrayTextInput jsonArrayTextInput) throws JsonParseException {
+    JsonArrayParser jsonArrayParser = new JsonArrayParser(jsonArrayTextInput);
+    return jsonArrayParser.parse();
+  }
+
+  /**
    * Instantiates a new Json array parser.
    *
    * @param jsonArrayTextInput the json array text input
    */
-  public JsonArrayParser(JsonArrayTextInput jsonArrayTextInput) {
+  private JsonArrayParser(JsonArrayTextInput jsonArrayTextInput) {
     this.jsonArrayTextInput = jsonArrayTextInput;
   }
 
@@ -48,7 +60,7 @@ public class JsonArrayParser extends Constants {
    * @return the json array list output
    * @throws JsonParseException the json parse exception
    */
-  public JsonArrayListOutput parse() throws JsonParseException {
+  private JsonArrayListOutput parse() throws JsonParseException {
     long startTime = new Date().getTime();
 
     // initialization

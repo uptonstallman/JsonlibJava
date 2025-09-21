@@ -39,10 +39,8 @@ public class JsonArrayParserTest extends TestConfig {
       String j = new String(Files
         .readAllBytes(Paths.get(Objects.requireNonNull(resource).toURI())));
 
-      jsonArrayParser = new JsonArrayParser(new JsonArrayTextInput(j));
-
       // execute parser
-      JsonArrayListOutput jsonArrayListOutput = jsonArrayParser.parse();
+      JsonArrayListOutput jsonArrayListOutput = JsonArrayParser.parse(new JsonArrayTextInput(j));
 
       //compare
       List<String> jacksonArrayItemsFromTestFile = getJacksonArrayItems(j);

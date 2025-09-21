@@ -22,9 +22,6 @@ public class JsonObjectParserTest extends TestConfig {
 
   ConsoleLog log = new ConsoleLog();
 
-  // Parser to test
-  JsonObjectParser jsonObjectParser;
-
   // Jackson to compare results
   JsonFactory jsonFactory = new JsonFactory();
   ObjectMapper jsonMapper = new ObjectMapper(jsonFactory);
@@ -38,10 +35,8 @@ public class JsonObjectParserTest extends TestConfig {
       String j = new String(Files
         .readAllBytes(Paths.get(Objects.requireNonNull(resource).toURI())));
 
-      jsonObjectParser = new JsonObjectParser(new JsonObjectTextInput(j));
-
       // execute parser
-      JsonObjectMapOutput jsonObjectMapOutput = jsonObjectParser.parse();
+      JsonObjectMapOutput jsonObjectMapOutput = JsonObjectParser.parse(new JsonObjectTextInput(j));
 
       //compare
       List<String> jacksonKeysAndValuesFromTesFile = getJacksonKeysAndValues(j);

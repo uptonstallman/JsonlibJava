@@ -27,11 +27,23 @@ public class JsonObjectParser extends Constants {
   private int[] pointsPositions;
 
   /**
+   * Parse json object literal.
+   *
+   * @param jsonObjectTextInput the json object text input
+   * @return the json object map output
+   * @throws JsonParseException the json parse exception
+   */
+  public static JsonObjectMapOutput parse(JsonObjectTextInput jsonObjectTextInput) throws JsonParseException {
+    JsonObjectParser jsonObjectParser = new JsonObjectParser(jsonObjectTextInput);
+    return jsonObjectParser.parse();
+  }
+
+  /**
    * Instantiates a new Json object parser.
    *
    * @param jsonObjectTextInput the json object text input
    */
-  public JsonObjectParser(JsonObjectTextInput jsonObjectTextInput) {
+  private JsonObjectParser(JsonObjectTextInput jsonObjectTextInput) {
     this.jsonObjectTextInput = jsonObjectTextInput;
   }
 
@@ -41,7 +53,7 @@ public class JsonObjectParser extends Constants {
    * @return the json object map output
    * @throws JsonParseException the json parse exception
    */
-  public JsonObjectMapOutput parse() throws JsonParseException {
+  private JsonObjectMapOutput parse() throws JsonParseException {
     long startTime = new Date().getTime();
 
     // initialization
