@@ -20,43 +20,47 @@ Add the library to your project by including the JAR or using Maven/Gradle:
 <dependency>
     <groupId>io.github.uptonstallman</groupId>
     <artifactId>jsonlibjava</artifactId>
-    <version>2.5.3</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 ### Gradle
 
-implementation 'io.uptonstallman:jsonlibjava:2.5.3'
+implementation 'io.uptonstallman:jsonlibjava:3.0.0'
 
 ## Usage
 
 ### API Reference
 
-#### `JsonObjectParser.parse()`
+#### Json Objects
+
+##### `JsonObjectParser.parse(JsonObjectTextInput jsonObjectTextInput)`
 - **Parameters:**
-  `JsonObjectTextInput` – JSON string to deserialize. Passed on constructor.
+  `JsonObjectTextInput` – JSON string to deserialize.
 - **Returns:**  
   `JsonObjectMapOutput` – Map of JSON elements.
 
-#### `JsonObjectSerializer.serialize(JsonObjectMapInput jsonObjectMapInput)`
+##### `JsonObjectSerializer.serialize(JsonObjectMapInput jsonObjectMapInput)`
 - **Parameters:**  
   `jsonObjectMapInput` – Map of JSON elements to serialize.
 - **Returns:**  
   `JsonObjectTextOutput` – JSON string.
 
-#### `JsonArrayParser.parse()`
+#### Json Arrays
+
+##### `JsonArrayParser.parse(JsonArrayTextInput jsonArrayTextInput)`
 - **Parameters:**
-  `JsonArrayTextInput` – JSON string to deserialize. Passed on constructor.
+  `JsonArrayTextInput` – JSON string to deserialize.
 - **Returns:**  
   `JsonArrayListOutput` – List of JSON elements.
 
-#### `JsonArraySerializer.serialize(JsonArrayListInput jsonArrayListInput)`
+##### `JsonArraySerializer.serialize(JsonArrayListInput jsonArrayListInput)`
 - **Parameters:**  
   `jsonArrayListInput` – List of JSON elements to serialize.
 - **Returns:**  
   `JsonArrayTextOutput` – JSON string.
 
 ### Javadoc
-[https://uptonstallman.github.io/JsonlibJava/javadoc/2.5.3/](https://uptonstallman.github.io/JsonlibJava/javadoc/2.5.3/)
+[https://uptonstallman.github.io/JsonlibJava/javadoc/3.0.0/](https://uptonstallman.github.io/JsonlibJava/javadoc/3.0.0/)
 
 ### Debug
 System property: -DjsonlibLogLevel=DEBUG
